@@ -7,11 +7,11 @@ module.exports = function toReadable (number) {
         let second = number%first;
         let sec;
             if(second > 0) {
-                sec = lastNum(second);
+                sec = ' ' + lastNum(second);
             } else {
                 sec = '';
             }
-        return (lastNum(first) + ' ' + sec/*lastNum(second)*/);
+        return lastNum(first) + sec;
     } else if(number < 121 ||
         number > 200 && number < 221 ||
         number > 300 && number < 321 ||
@@ -26,11 +26,11 @@ module.exports = function toReadable (number) {
         let second = number%100;
         let sec;
             if(second > 0) {
-                sec = lastNum(second);
+                sec = ' ' + lastNum(second);
             } else {
                 sec = '';
             }
-        return lastNum(first) + ' hundred ' + sec;
+        return lastNum(first) + ' hundred' + sec;
     } else {
         let first = number/100;
         first = Math.floor(first);
@@ -40,7 +40,7 @@ module.exports = function toReadable (number) {
         second = Math.floor(second) * 10;
         let sec;
             if(second > 0) {
-                sec = lastNum(second);
+                sec = ' ' + lastNum(second);
             } else {
                 sec = '';
             }
@@ -50,11 +50,11 @@ module.exports = function toReadable (number) {
         third = number%third;
         let th;
             if(third > 0){
-                th = lastNum(third);
+                th = ' ' + lastNum(third);
             } else {
                 th = '';
             }
-        return lastNum(first) + ' hundred ' + sec + ' ' + th;
+        return lastNum(first) + ' hundred' + sec + th;
     }
     
 }
